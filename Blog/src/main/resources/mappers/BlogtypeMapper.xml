@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.Puraya.Blog.dao.BlogtypeMapper" >
+  <resultMap id="BaseResultMap" type="com.Puraya.Blog.pojo.Blogtype" >
+    <constructor >
+      <arg column="type_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="typename" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="father" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.Puraya.Blog.pojo.Blogtype" >
+    insert into blogtype (type_id, typename, father
+      )
+    values (#{typeId,jdbcType=INTEGER}, #{typename,jdbcType=VARCHAR}, #{father,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.Puraya.Blog.pojo.Blogtype" >
+    insert into blogtype
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="typename != null" >
+        typename,
+      </if>
+      <if test="father != null" >
+        father,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="typename != null" >
+        #{typename,jdbcType=VARCHAR},
+      </if>
+      <if test="father != null" >
+        #{father,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
