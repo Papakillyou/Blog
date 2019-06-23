@@ -11,6 +11,33 @@
       <arg column="type_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
+
+  <select id="getAllBlog"  resultType="Blog">
+    SELECT * FROM blog
+  </select>
+
+  <insert id="addBlog" parameterType="Blog" useGeneratedKeys="true" keyProperty="blog_id">
+    insert into blog
+    values(#{blog_id},#{title},#{blog_time},#{content},#{point},#{type_id})
+  </insert>
+
+  <delete id="deleteBlog" parameterType="Integer" >
+    delete from blog
+    where blog_id=#{id}
+  </delete>
+
+  <update id="updateBlog" parameterType="Blog">
+    update blog
+    set title=#{title},blog_time#{blog_time},content=#{content},point=#{point},type_id=#{type_id}
+    where blog_id=#{id}
+
+  </update>
+
+  <select id="getContent" parameterType="Integer" resultType="Blog">
+    select * from blog
+    where blog_id=#{id}
+  </select>
+
   <insert id="insert" parameterType="com.Puraya.Blog.pojo.Blog" >
     insert into blog (blog_id, title, blog_time, 
       content, point, type_id
@@ -19,7 +46,7 @@
       #{content,jdbcType=VARCHAR}, #{point,jdbcType=INTEGER}, #{typeId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.Puraya.Blog.pojo.Blog" >
+  <insert id="insertSelective" parameterType="com.Puraya.Blog.pojo.Blog" useGeneratedKeys="true" keyProperty="blog_id">
     insert into blog
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="blogId != null" >

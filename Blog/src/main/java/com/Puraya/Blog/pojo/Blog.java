@@ -3,7 +3,7 @@ package com.Puraya.Blog.pojo;
 import java.util.Date;
 
 public class Blog {
-    private Integer blogId;
+    private Integer blog_id;
 
     private String title;
 
@@ -15,8 +15,8 @@ public class Blog {
 
     private Integer typeId;
 
-    public Blog(Integer blogId, String title, Date blogTime, String content, Integer point, Integer typeId) {
-        this.blogId = blogId;
+    public Blog(Integer blog_id, String title, Date blogTime, String content, Integer point, Integer typeId) {
+        this.blog_id = blog_id;
         this.title = title;
         this.blogTime = blogTime;
         this.content = content;
@@ -29,11 +29,11 @@ public class Blog {
     }
 
     public Integer getBlogId() {
-        return blogId;
+        return blog_id;
     }
 
     public void setBlogId(Integer blogId) {
-        this.blogId = blogId;
+        this.blog_id = blogId;
     }
 
     public String getTitle() {

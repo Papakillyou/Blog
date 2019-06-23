@@ -2,5 +2,25 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebContent/META-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/addBlog.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/content.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/deleteBlog.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/done.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/failed.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/index.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/init.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/login.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/WebContent/WEB-INF/View/updateBlog.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/META-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/addBlog.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/content.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/deleteBlog.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/done.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/failed.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/index.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/init.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/login.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/View/updateBlog.jsp" charset="GBK" />
   </component>
 </project>

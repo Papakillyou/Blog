@@ -17,16 +17,20 @@
     <!-- 1、启用注解驱动-->
     <mvc:annotation-driven />
 
+    <mvc:annotation-driven/>
+
     <mvc:default-servlet-handler/>
 
     <!-- 3、自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:component-scan base-package="com.Puraya.Blog.controller" />
 
     <!-- 4、视图解析器 id="viewResolver"-->
-    <bean  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
         <property name="prefix" value="/WEB-INF/View/" /><!-- 指定jsp文件存放的位置 -->
         <property name="suffix" value=".jsp" />
+
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
     </bean>
 
 </beans>
