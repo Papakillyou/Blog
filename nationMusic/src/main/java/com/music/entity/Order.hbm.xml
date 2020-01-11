@@ -8,7 +8,7 @@
         <id name="orderid">
             <column name="orderid" sql-type="int(11)"/>
         </id>
-        <many-to-one name="listByList" class="com.music.entity.List">
+        <many-to-one name="songlistByList" class="com.music.entity.Songlist">
             <column name="list"/>
         </many-to-one>
         <many-to-one name="musicByMusic" class="com.music.entity.Music">

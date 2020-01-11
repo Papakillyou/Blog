@@ -2,7 +2,6 @@ package com.music.dao;
 
 import com.music.entity.Music;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface MusicDao {
@@ -17,10 +16,6 @@ public interface MusicDao {
     //根据id查找音乐
     public Music getMusicById(int musicId);
     //根据歌名查询
-    public ArrayList<Music> queryMusicByName(String name);
-    //根据歌手查询
-    public ArrayList<Music> queryMusicBySinger(String singer);
-    //根据民族查询
-    public ArrayList<Music> queryMusicByNation(String nation);
+    public List queryMusicInfo(String keyword);
 
 }

@@ -1,9 +1,7 @@
 package com.music.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Music {
@@ -13,6 +11,7 @@ public class Music {
     private String summary;
     private String path;
     private String nation;
+    private Collection<Order> ordersByMusicid;
 
     @Id
     @Column(name = "musicid", nullable = false)
@@ -100,5 +99,14 @@ public class Music {
         result = 31 * result + (path != null ? path.hashCode() : 0);
         result = 31 * result + (nation != null ? nation.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "musicByMusic")
+    public Collection<Order> getOrdersByMusicid() {
+        return ordersByMusicid;
+    }
+
+    public void setOrdersByMusicid(Collection<Order> ordersByMusicid) {
+        this.ordersByMusicid = ordersByMusicid;
     }
 }

@@ -27,13 +27,26 @@ public class UserAction extends ActionSupport {
     }
 
     public String login() {
-        if(userService.login(user)) {
+        if(userService.login(user)!=-1) {//匹配到了
             Map session = ActionContext.getContext().getSession();
-            session.put("user", user);
+            session.put("username", user.getUsername());
+            session.put("userid", userService.login(user));
+            System.out.println("*******************************"+userService.login(user));
             return SUCCESS;
         } else {
             return ERROR;
         }
+    }
+
+    public String reg(){
+        if(userService.addUser(user)) {
+            Map session = ActionContext.getContext().getSession();
+            session.put("userid", user.getUserid());
+            session.put("username", user.getUsername());
+
+            return "regsuccess";
+        }
+        else return ERROR;
     }
 
 }

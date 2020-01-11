@@ -14,7 +14,7 @@ public interface UserDao {
     /**
      * 进行登录
      */
-    public boolean login(User user);
+    public int login(User user);
 
 
     /**

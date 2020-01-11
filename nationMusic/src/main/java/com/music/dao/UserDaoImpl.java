@@ -23,21 +23,22 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public boolean login(User user) {
+    public int login(User user) {
         Iterator<User> it;
         String hsql="FROM User u where u.username=? and u.userpassword=?";
         System.out.println(hsql);
         Query query = sessionFactory.getCurrentSession().createQuery(hsql);
-        query.setString(0, user.getUsername());
+        query.setString(0, user.getUsername()); //设置hql语句内的参数 将"?"的坑填了。
         query.setString(1, user.getUserpassword());
         System.out.println(user.getUsername());
         it=query.iterate();
+        List<User> querylist=(List<User>) query.list();
         if(it.hasNext()) {
             System.out.println("true");
-            return true;
+            return querylist.get(0).getUserid();
         } else {
             System.out.println("false");
-            return false;
+            return  -1;
         }
     }
 

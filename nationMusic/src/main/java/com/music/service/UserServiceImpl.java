@@ -2,7 +2,6 @@ package com.music.service;
 
 import com.music.dao.UserDao;
 import com.music.entity.User;
-import com.music.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,7 +21,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public boolean login(User user) {
+    public int login(User user) {
         return this.userDao.login(user);
     }
 

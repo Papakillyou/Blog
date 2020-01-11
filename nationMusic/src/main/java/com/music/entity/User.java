@@ -1,15 +1,14 @@
 package com.music.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class User {
     private int userid;
     private String username;
     private String userpassword;
+    private Collection<Songlist> songlistsByUserid;
 
     @Id
     @Column(name = "userid", nullable = false)
@@ -61,5 +60,14 @@ public class User {
         result = 31 * result + (username != null ? username.hashCode() : 0);
         result = 31 * result + (userpassword != null ? userpassword.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "userByUser")
+    public Collection<Songlist> getSonglistsByUserid() {
+        return songlistsByUserid;
+    }
+
+    public void setSonglistsByUserid(Collection<Songlist> songlistsByUserid) {
+        this.songlistsByUserid = songlistsByUserid;
     }
 }

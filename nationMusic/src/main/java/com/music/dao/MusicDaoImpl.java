@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 @Transactional(rollbackFor = Exception.class)
@@ -45,17 +44,14 @@ public class MusicDaoImpl implements MusicDao{
     }
 
     @Override
-    public ArrayList<Music> queryMusicByName(String name) {
-        return (ArrayList<Music>) sessionFactory.getCurrentSession().get(Music.class,name);
+    public List queryMusicInfo(String keyword) {
+        String hql="From Music music where 1=1";
+        if (!keyword.equals("")){
+            hql=hql+"and music.title like '%"+ keyword +"%'";
+            hql=hql+" or music.singer like '%"+ keyword +"%'";
+            hql=hql+" or music.nation like '%"+ keyword +"%'";}
+        return sessionFactory.getCurrentSession().createQuery(hql).list();
     }
 
-    @Override
-    public ArrayList<Music> queryMusicBySinger(String singer) {
-        return (ArrayList<Music>) sessionFactory.getCurrentSession().get(Music.class,singer);
-    }
 
-    @Override
-    public ArrayList<Music> queryMusicByNation(String nation) {
-        return (ArrayList<Music>) sessionFactory.getCurrentSession().get(Music.class,nation);
-    }
 }

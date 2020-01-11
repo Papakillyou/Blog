@@ -23,5 +23,11 @@
         <property name="nation">
             <column name="nation" sql-type="varchar(30)" length="30"/>
         </property>
+        <set name="ordersByMusicid" inverse="true">
+            <key>
+                <column name="music"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.music.entity.Order"/>
+        </set>
     </class>
 </hibernate-mapping>

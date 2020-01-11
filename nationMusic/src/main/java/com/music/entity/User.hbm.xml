@@ -14,5 +14,11 @@
         <property name="userpassword">
             <column name="userpassword" sql-type="varchar(255)"/>
         </property>
+        <set name="songlistsByUserid" inverse="true">
+            <key>
+                <column name="user"/>
+            </key>
+            <one-to-many not-found="ignore" class="com.music.entity.Songlist"/>
+        </set>
     </class>
 </hibernate-mapping>

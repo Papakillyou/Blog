@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Order {
     private int orderid;
-    private List listByList;
+    private Songlist songlistByList;
     private Music musicByMusic;
 
     @Id
@@ -37,12 +37,12 @@ public class Order {
 
     @ManyToOne
     @JoinColumn(name = "list", referencedColumnName = "listid", nullable = false)
-    public List getListByList() {
-        return listByList;
+    public Songlist getSonglistByList() {
+        return songlistByList;
     }
 
-    public void setListByList(List listByList) {
-        this.listByList = listByList;
+    public void setSonglistByList(Songlist songlistByList) {
+        this.songlistByList = songlistByList;
     }
 
     @ManyToOne

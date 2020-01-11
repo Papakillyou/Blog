@@ -80,10 +80,10 @@
         </property>
         <property name="mappingLocations">
             <list>
-                <value>classpath:com/music/entity/List.hbm.xml</value>
                 <value>classpath:com/music/entity/Music.hbm.xml</value>
                 <value>classpath:com/music/entity/Order.hbm.xml</value>
                 <value>classpath:com/music/entity/User.hbm.xml</value>
+                <value>classpath:com/music/entity/Songlist.hbm.xml</value>
             </list>
         </property>
     </bean>
